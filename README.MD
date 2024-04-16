@@ -4,6 +4,8 @@
 <div align="center"><img align="center" width="200px" alt="logoPrincipal" src="./ReadmeAssets/logo2.png"></div>
 
 ## Descripcion
+![Status](https://img.shields.io/badge/STATUS-Completed-green
+)
 
 - Aplicacion creada para personal encargado del prestamo de mobiliario.
 - Proyecto dividido en dos partes, Backend y Frontend. En esta parte veremos los detalles relevantes para el Backend.
@@ -170,3 +172,12 @@
   - [PUT]http://host:8080/users/update -> Actualiza los datos de un usuario
 
   - [PUT]http://host:8080/users/updateComplete -> Actualiza los datos completos de un usuario, es decir, los datos de usuario y los del empleado
+
+---
+
+<h2 align="center">
+Buscame en mis redes 
+<div align="center" style="margin-top:18px;"><a href="https://www.linkedin.com/in/sergioparedesarellano"><img src="./ReadmeAssets/linkedin.svg" style="background-color:white; border-radius:15px;" width="40px"/></a>
+<a href="https://github.com/arcan16"><img src="./ReadmeAssets/github.svg" style="filter: invert()" width="40px"/></a></div>
+</h2> 
+
