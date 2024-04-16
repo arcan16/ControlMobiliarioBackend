@@ -177,7 +177,9 @@
 
 <h2 align="center">
 Buscame en mis redes 
-<div align="center" style="margin-top:18px;"><a href="https://www.linkedin.com/in/sergioparedesarellano"><img src="./ReadmeAssets/linkedin.svg" style="background-color:white; border-radius:15px;" width="40px"/></a>
-<a href="https://github.com/arcan16"><img src="./ReadmeAssets/github.svg" style="filter: invert()" width="40px"/></a></div>
+<div align="center" style="margin-top:18px; background-color:white; width:400px; margin:auto; padding:5px; border-radius:10px">
+<a href="https://www.linkedin.com/in/sergioparedesarellano"><img src="./ReadmeAssets/linkedin.svg" style="background-color:white; border-radius:15px;" width="40px"/></a>
+<a href="https://github.com/arcan16"><img src="./ReadmeAssets/github.svg" width="40px"/></a>
+</div>
 </h2> 
 
