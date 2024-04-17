@@ -18,22 +18,34 @@ import java.util.List;
 @Repository
 public interface ReservacionRepository extends JpaRepository<ReservacionEntity,Long> {
 
-    @Query("""
-        SELECT NEW com.example.dto.reservacion.MobiliarioPrestadoDTO(
-            pm.mobiliario.idMobiliario,
-            m.descripcion,
-            SUM(rm.cantidad * pm.cantidad) as total
-        )
-        FROM ReservacionEntity r
-        JOIN ReservaMobiliarioEntity rm ON r.idReservacion = rm.reservacion.idReservacion
-        JOIN PresentationMobiliarioEntity pm ON pm.presentation.idPresentacion = rm.presentation.idPresentacion
-        JOIN PresentationEntity p ON pm.presentation.idPresentacion = p.idPresentacion
-        JOIN MobiliarioEntity m ON pm.mobiliario.idMobiliario = m.idMobiliario
-        where r.fechaEntrega <= :fechaEntrega and r.fechaRecepcion >= :fechaEntrega
-        GROUP BY m.descripcion
-    """)
-    List<MobiliarioPrestadoDTO> prestamosVigentes(@Param("fechaEntrega") LocalDateTime fechaEntrega);
-
+//    @Query("""
+//        SELECT NEW com.example.dto.reservacion.MobiliarioPrestadoDTO(
+//            pm.mobiliario.idMobiliario,
+//            m.descripcion,
+//            SUM(rm.cantidad * pm.cantidad) as total
+//        )
+//        FROM ReservacionEntity r
+//        JOIN ReservaMobiliarioEntity rm ON r.idReservacion = rm.reservacion.idReservacion
+//        JOIN PresentationMobiliarioEntity pm ON pm.presentation.idPresentacion = rm.presentation.idPresentacion
+//        JOIN PresentationEntity p ON pm.presentation.idPresentacion = p.idPresentacion
+//        JOIN MobiliarioEntity m ON pm.mobiliario.idMobiliario = m.idMobiliario
+//        where r.fechaEntrega <= :fechaEntrega and r.fechaRecepcion >= :fechaEntrega
+//        GROUP BY m.descripcion
+//    """)
+//    List<MobiliarioPrestadoDTO> prestamosVigentes(@Param("fechaEntrega") LocalDateTime fechaEntrega);
+@Query(value = "SELECT NEW com.example.dto.reservacion.MobiliarioPrestadoDTO(" +
+        "pm.mobiliario.idMobiliario, " +
+        "m.descripcion, " +
+        "SUM(rm.cantidad * pm.cantidad) as total" +
+        ") " +
+        "FROM ReservacionEntity r " +
+        "JOIN ReservaMobiliarioEntity rm ON r.idReservacion = rm.reservacion.idReservacion " +
+        "JOIN PresentationMobiliarioEntity pm ON pm.presentation.idPresentacion = rm.presentation.idPresentacion " +
+        "JOIN PresentationEntity p ON pm.presentation.idPresentacion = p.idPresentacion " +
+        "JOIN MobiliarioEntity m ON pm.mobiliario.idMobiliario = m.idMobiliario " +
+        "where r.fechaEntrega <= :fechaEntrega and r.fechaRecepcion >= :fechaEntrega " +
+        "GROUP BY m.descripcion", nativeQuery = true)
+List<MobiliarioPrestadoDTO> prestamosVigentes(@Param("fechaEntrega") LocalDateTime fechaEntrega);
     @Query("""
             SELECT r FROM ReservacionEntity r WHERE r.fechaRecepcion = :fecha
             """)

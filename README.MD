@@ -1,4 +1,4 @@
-<h1 align="center"> Control de mobiliario</h1>
+<h1 align="center"> Control de mobiliario Backend</h1>
 
 
 <div align="center"><img align="center" width="200px" alt="logoPrincipal" src="./ReadmeAssets/logo2.png"></div>
