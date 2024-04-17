@@ -38,7 +38,7 @@ public class ReservacionEntity {
 
     private LocalDateTime fechaRecepcion;
 
-    private Integer status=0    ;
+    private Integer status=0;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "reservacion", fetch = FetchType.LAZY)
     private List<ReservaMobiliarioEntity> reservaMobiliarioList = new ArrayList<>();
