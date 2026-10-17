@@ -49,8 +49,11 @@
 
 ### Usuario inicial
 
-- Username: admin
-- Password: admin
+- El usuario y la contraseña del administrador inicial se definen con las variables de entorno `ADMIN_USERNAME` y `ADMIN_PASSWORD`.
+
+### Variables de entorno
+
+Las credenciales no se guardan en el repositorio. Copia `.env.example` como `.env` en la raíz del proyecto (ya está en `.gitignore`) y llena los valores, o defínelos como variables de entorno del sistema.
 
 ## Funciones del proyecto
 
