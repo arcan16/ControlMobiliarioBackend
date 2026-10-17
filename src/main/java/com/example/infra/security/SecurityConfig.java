@@ -52,19 +52,6 @@ public class SecurityConfig {
 
     }
 
- /* El siguiente codigo sera reemplazado por la clase UserDetailsServiceImpl del paquete service
-    parea realizar lo mismo, solo que utilizando la informacion de la base de datos
-
-    @Bean
-    UserDetailsService userDetailsService(){
-        InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
-        manager.createUser(User.withUsername("leonardo")
-                .password(password<Encode>r().encode("1234"))
-                .roles()
-                .build());
-        return manager;
-    }*/
-
     @Bean
     PasswordEncoder passwordEncoder(){
 //        return NoOpPasswordEncoder.getInstance();
