@@ -47,10 +47,19 @@
 
 - Dentro de la carpeta /ReadmeAssets se encuentra el diagrama creado con Workbench
 
+### Configuracion
+
+Las credenciales no se guardan en el codigo: se leen de variables de entorno.
+
+1. Copia `.env.example` como `.env` en la raiz del proyecto (el archivo `.env` esta en `.gitignore`).
+2. Llena los valores: `DB_USERNAME`, `DB_PASSWORD`, `JWT_SECRET_KEY` (genera una con `openssl rand -base64 32`) y `ADMIN_PASSWORD`.
+3. Opcional: `EMAIL_SENDER` y `EMAIL_PASSWORD` para el envio de correos.
+
+Tambien puedes definir esas mismas variables directamente en el sistema o en la configuracion de ejecucion de tu IDE.
+
 ### Usuario inicial
 
-- Username: admin
-- Password: admin
+En la primera ejecucion se crea un usuario administrador con el nombre de `ADMIN_USERNAME` (por defecto `admin`) y la contrasena de `ADMIN_PASSWORD`.
 
 ## Funciones del proyecto
 

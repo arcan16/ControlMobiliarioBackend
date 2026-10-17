@@ -33,3 +33,6 @@ build/
 .vscode/
 
 .Insertando_datos_de_prueba
+
+### Variables de entorno ###
+.env
